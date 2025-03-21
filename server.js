@@ -88,7 +88,7 @@ app.get('/shoes', (req, res) => {
       //filter the shoes, only send if price <= max
       const shoesList = shoes.filter(shoe => shoe.price <= max);
       res.send(`<ul>${shoesList.map(shoe => `<li>${shoe.name} - $${shoe.price}</li>`).join('')}</ul>`)
-    } else if(shoes.contains(type)=true && !min && !max){
+    } else if(type && !min && !max){
       //filter the shoes, only send if type matches
       const shoesList = shoes.filter(shoe => shoe.type === type);
       res.send(`<ul>${shoesList.map(shoe => `<li>${shoe.name} - $${shoe.price}</li>`).join('')}</ul>`)
